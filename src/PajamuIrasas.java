@@ -50,4 +50,12 @@ public class PajamuIrasas extends Irasas {
         DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         this.data = t.format(timeFormatter);
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }
