@@ -2,28 +2,22 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class IslaiduIrasas extends Irasas {
-    private int suma;
-    private String kategorija;
-    private String dataSuLaiku;
+    private String islaiduKategorija;
     private String atsiskaitymoBudas;
-    private String papildomaInfo;
-    private int id;
 
-
-    public int getSuma() {
-        return suma;
+    public IslaiduIrasas(int id, double suma, LocalDateTime now, String kategorija,
+                         boolean atsiskaitymoBudasBankas, String papildomaInfo, String islaiduTipas,
+                         String irasoTipas) {
+        super();
     }
 
-    public void setSuma(int suma) {
-        this.suma = suma;
+
+    public String getIslaiduKategorija() {
+        return islaiduKategorija;
     }
 
-    public String getKategorija() {
-        return kategorija;
-    }
-
-    public void setKategorija(String kategorija) {
-        this.kategorija = kategorija;
+    public void setIslaiduKategorija(String kategorija) {
+        this.islaiduKategorija = kategorija;
     }
 
     public String getAtsiskaitymoBudas() {
@@ -34,27 +28,9 @@ public class IslaiduIrasas extends Irasas {
         this.atsiskaitymoBudas = atsiskaitymoBudas;
     }
 
-    public String getPapildomaInfo() {
-        return papildomaInfo;
-    }
-
-    public void setPapildomaInfo(String papildomaInfo) {
-        this.papildomaInfo = papildomaInfo;
-    }
-
-    public String getDataSuLaiku(){
-        return dataSuLaiku;
-    }
-
-    public void setDataSuLaiku(){
-        LocalDateTime t = LocalDateTime.now();
-        DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        this.dataSuLaiku = t.format(timeFormatter);
-    }
-
-    public int getId() {
-        return id;
-    }
+//    public int getId() {
+//        return id;
+//    }
 
     public void setId(int id) {
         this.id = id;

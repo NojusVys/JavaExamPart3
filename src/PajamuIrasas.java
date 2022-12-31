@@ -2,27 +2,22 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 public class PajamuIrasas extends Irasas {
-    private int suma;
-    private String kategorija;
-    private String data;
+    private String pajamuKategorija;
     private boolean pozymisArIBanka;
-    private String papildomaInfo;
 
-
-    public int getSuma() {
-        return suma;
+    public PajamuIrasas(int id, double suma, LocalDate now, String kategorija,
+                        boolean atsiskaitymoBudasBankas, String papildomaInfo,
+                        String pajamuTipas, String irasoTipas) {
+        super();
     }
 
-    public void setSuma(int suma) {
-        this.suma = suma;
+
+    public String getPajamuKategorija() {
+        return pajamuKategorija;
     }
 
-    public String getKategorija() {
-        return kategorija;
-    }
-
-    public void setKategorija(String kategorija) {
-        this.kategorija = kategorija;
+    public void setPajamuKategorija(String kategorija) {
+        this.pajamuKategorija = kategorija;
     }
 
     public boolean isPozymisArIBanka() {
@@ -33,27 +28,9 @@ public class PajamuIrasas extends Irasas {
         this.pozymisArIBanka = pozymisArIBanka;
     }
 
-    public String getPapildomaInfo() {
-        return papildomaInfo;
-    }
-
-    public void setPapildomaInfo(String papildomaInfo) {
-        this.papildomaInfo = papildomaInfo;
-    }
-
-    public String getData(){
-        return data;
-    }
-
-    public void setData(){
-        LocalDate t = LocalDate.now();
-        DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        this.data = t.format(timeFormatter);
-    }
-
-    public int getId() {
-        return id;
-    }
+//    public int getId() {
+//        return id;
+//    }
 
     public void setId(int id) {
         this.id = id;
