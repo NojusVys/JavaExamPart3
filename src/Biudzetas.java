@@ -25,7 +25,7 @@ public class Biudzetas {
         System.out.println("Pasirinkite");
         String type = pasirinkimas(sc, "[1] - Pajamų įrašas", "[2] - Išlaidų įrašas");
         System.out.println(Pranesimai.SUMA.pranesimas);
-        int suma = Integer.parseInt(sc.nextLine());
+        double suma = Double.parseDouble(sc.nextLine());
         System.out.println(Pranesimai.KATEGORIJA.pranesimas);
         String kategorija = sc.nextLine();
         System.out.println(Pranesimai.AR_I_BANKA.pranesimas);
@@ -256,7 +256,7 @@ public class Biudzetas {
                 String answer = pasirinkimas(sc, "[1] - Redaguoti", "[2] - Toliau", "[3] - Baigti redagavimą");
                 if (answer.equals("1")) {
                     System.out.println(Pranesimai.SUMA.pranesimas);
-                    irasas1.setSuma(Integer.parseInt(sc.nextLine()));
+                    irasas1.setSuma(Double.parseDouble(sc.nextLine()));
                 }
                 if (answer.equals("3")) {
                     return true;

@@ -7,7 +7,7 @@ public class IslaiduIrasas extends Irasas {
     private String dataIrLaikas;
     private String islaiduTipas;
 
-    public IslaiduIrasas(int id, int suma, String islaiduKategorija, boolean arIBanka, String papildomaInfo,
+    public IslaiduIrasas(int id, double suma, String islaiduKategorija, boolean arIBanka, String papildomaInfo,
                          String islaiduTipas, String irasoTipas) {
         super(id, suma, arIBanka, papildomaInfo, irasoTipas);
         this.islaiduKategorija = islaiduKategorija;
@@ -57,12 +57,12 @@ public class IslaiduIrasas extends Irasas {
     }
 
     @Override
-    public int getSuma() {
+    public double getSuma() {
         return super.getSuma();
     }
 
     @Override
-    public void setSuma(int suma) {
+    public void setSuma(double suma) {
         super.setSuma(suma);
     }
 

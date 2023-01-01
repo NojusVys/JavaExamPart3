@@ -10,8 +10,8 @@ public enum Pranesimai {
     REDAGUOTI("Pasirinkite operaciją, kuria norite redaguoti."),
     NETINKAMAS_ID("Operacija su tokiu id nerasta."),
     FORMATAS("| %-20s | %-20s | %-20s |"),
-    PAJAMU_FORMATAS("| %-5d | %-10d | %-10s | %-15s | %-15s "),
-    ISLAIDU_FORMATAS("| %-5d | %-10d | %-15s | %-15s | %-15s ");
+    PAJAMU_FORMATAS("| %-5d | %-10.2f | %-10s | %-15s | %-15s "),
+    ISLAIDU_FORMATAS("| %-5d | %-10.2f | %-15s | %-15s | %-15s ");
 
 
     public final String pranesimas;

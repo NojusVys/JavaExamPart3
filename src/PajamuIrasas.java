@@ -6,7 +6,7 @@ public class PajamuIrasas extends Irasas {
     private String pajamuKategorija;
     private String data;
 
-    public PajamuIrasas(int id, int suma, String kategorija,
+    public PajamuIrasas(int id, double suma, String kategorija,
                         boolean arIBanka, String papildomaInfo,
                         String pajamuTipas, String irasoTipas) {
         super(id, suma, arIBanka, papildomaInfo, irasoTipas);
@@ -57,12 +57,12 @@ public class PajamuIrasas extends Irasas {
     }
 
     @Override
-    public int getSuma() {
+    public double getSuma() {
         return super.getSuma();
     }
 
     @Override
-    public void setSuma(int suma) {
+    public void setSuma(double suma) {
         super.setSuma(suma);
     }
 
