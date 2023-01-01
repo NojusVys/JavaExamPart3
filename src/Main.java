@@ -2,70 +2,23 @@ import java.util.Scanner;
 
 public class Main {
     public static void main (String [] args){
-        PajamuIrasas pi1 = new PajamuIrasas();
-        IslaiduIrasas ii1 = new IslaiduIrasas();
         Biudzetas b1 = new Biudzetas();
         Scanner sc = new Scanner(System.in);
         boolean runProgram = true;
-        int pajamosId = 1;
-        int islaidosId = 1;
 
-        komandos();
         while(runProgram){
-            String command = sc.nextLine().toLowerCase();
+            komandos();
+            String command = sc.nextLine();
             switch (command) {
-                case "n" -> {
-                    b1.pridetiIrasa(sc);
-                }
-//                case "pajamos" -> {
-//                    System.out.println("Įveskite pajamų kiekį:");
-//                    pi1.setSuma(Integer.parseInt(sc.nextLine()));
-//                    System.out.println("Pajamų kategoriją:");
-//                    pi1.setPajamuKategorija(sc.nextLine());
-//                    System.out.println("Ar į banką (true/false)");
-//                    pi1.setPozymisArIBanka(Boolean.parseBoolean(sc.nextLine()));
-//                    System.out.println("Papildoma informacija:");
-//                    pi1.setPapildomaInfo(sc.nextLine());
-//                    pi1.setData();
-//                    pi1.setId(pajamosId);
-//                    b1.pridetiIrasa(pi1, command);
-//                    pi1 = new PajamuIrasas();
-//                    pajamosId++;
-//                }
-//                case "islaidos" -> {
-//                    System.out.println("Įveskite išlaidų kiekį:");
-//                    ii1.setSuma(Integer.parseInt(sc.nextLine()));
-//                    System.out.println("Išlaidų kategorija:");
-//                    ii1.setIslaiduKategorija(sc.nextLine());
-//                    System.out.println("Atsiskaitymo būdas:");
-//                    ii1.setAtsiskaitymoBudas(sc.nextLine());
-//                    System.out.println("Papildoma informacija:");
-//                    ii1.setPapildomaInfo(sc.nextLine());
-//                    ii1.setData();
-//                    ii1.setId(islaidosId);
-//                    b1.pridetiIrasa(ii1, command);
-//                    islaidosId++;
-//                    ii1 = new IslaiduIrasas();
-//                }
-                case "isvesti pajamas" -> {
-                    b1.gautiPajamuIrasa();
-                }
-                case "isvesti islaidas" -> {
-                    b1.gautiIslaiduIrasa();
-                }
-//                case "balansas" -> System.out.printf("Dabartinis balansas: %.2f EUR\n", b1.balansas());
-//                case "remove p" -> {
-//                    System.out.println("Kurią operaciją norite pašalinti?");
-//                    int i = Integer.parseInt(sc.nextLine());
-//                    b1.removeP(i - 1);
-//                }
-//                case "remove i" -> {
-//                    System.out.println("Kurią operaciją norite pašalinti?");
-//                    int i = Integer.parseInt(sc.nextLine());
-//                    b1.removeI(i - 1);
-//                }
-                case "komandos" -> komandos();
-                case "stop" -> {
+                case "1" -> b1.sukurtiIrPrideti(sc);
+                case "2" -> System.out.printf("Bendros pajamos: %d\n", b1.gautiVisasPajamas());
+                case "3" -> System.out.printf("Bendros išlaidos: %d\n", b1.gautiVisasIslaidas());
+                case "4" -> System.out.printf("Dabartinis balansas: %.2f EUR\n", b1.balansas());
+                case "5" -> b1.redaguoti(sc);
+                case "6" -> b1.atspausdintiPajamuIrasus();
+                case "7" -> b1.atspausdintiIslaiduIrasus();
+                case "8" -> b1.visiIrasai();
+                case "0" -> {
                     System.out.println("Programa baigiama.");
                     runProgram = false;
                 }
@@ -77,14 +30,15 @@ public class Main {
 
     static void komandos(){
         System.out.print("""
-                n - sukurti naują įrašą
-                isvesti pajamas
-                isvesti išlaidas
-                balansas - patikrinti balansą
-                remove p - pašalinti pajamų operaciją iš sąrašo
-                remove i - pašalinti išlaidų operaciją iš sąrašo
-                komandos - komandų sąrašas
-                stop - nutraukia programos veikimą
+                1 - sukurti naują įrašą
+                2 - bendros pajamos
+                3 - bendros išlaidos
+                4 - patikrinti balansą
+                5 - redaguoti įrašą
+                6 - atspausdinti pajamas
+                7 - atspausdinti išlaidas
+                8 - visi irasai
+                0 - nutraukia programos veikimą
                 """);
     }
 }

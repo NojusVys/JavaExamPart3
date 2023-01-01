@@ -1,11 +1,31 @@
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-
 public class Irasas {
-    int suma;
-    String data;
-    String papildomaInfo;
-    int id;
+    private final int id;
+    private int suma;
+
+    private boolean arIBanka;
+    private String papildomaInfo;
+
+    private String irasoTipas;
+
+    public Irasas(int id, int suma, boolean arIBanka, String papildomaInfo, String recordType) {
+        this.id = id;
+        this.suma = suma;
+        this.arIBanka = arIBanka;
+        this.papildomaInfo = papildomaInfo;
+        this.irasoTipas = recordType;
+    }
+
+    public void setArIBanka(boolean arIBanka) {
+        this.arIBanka = arIBanka;
+    }
+
+    public void setIrasoTipas(String irasoTipas) {
+        this.irasoTipas = irasoTipas;
+    }
+
+    public boolean isArIBanka() {
+        return arIBanka;
+    }
 
     public int getSuma() {
         return suma;
@@ -23,17 +43,27 @@ public class Irasas {
         this.papildomaInfo = papildomaInfo;
     }
 
-    public String getData(){
-        return data;
-    }
-
-    public void setData(){
-        LocalDate t = LocalDate.now();
-        DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        this.data = t.format(timeFormatter);
-    }
-
     public int getId() {
         return id;
+    }
+
+    public String getIrasoTipas() {
+        return irasoTipas;
+    }
+
+    @Override
+    public String toString() {
+        if (this.irasoTipas.equals("Pajamos")) {
+            return String.format(Pranesimai.PAJAMU_FORMATAS.pranesimas, id, suma, arIBanka, papildomaInfo, irasoTipas);
+        } else {
+            return String.format(Pranesimai.ISLAIDU_FORMATAS.pranesimas, id, suma, arIBanka, papildomaInfo, irasoTipas);
+        }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Irasas irasas)) return false;
+        return id == irasas.id;
     }
 }
