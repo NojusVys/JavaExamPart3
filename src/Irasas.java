@@ -1,13 +1,13 @@
 public class Irasas {
     private final int id;
-    private int suma;
+    private double suma;
 
     private boolean arIBanka;
     private String papildomaInfo;
 
     private String irasoTipas;
 
-    public Irasas(int id, int suma, boolean arIBanka, String papildomaInfo, String recordType) {
+    public Irasas(int id, double suma, boolean arIBanka, String papildomaInfo, String recordType) {
         this.id = id;
         this.suma = suma;
         this.arIBanka = arIBanka;
@@ -27,11 +27,11 @@ public class Irasas {
         return arIBanka;
     }
 
-    public int getSuma() {
+    public double getSuma() {
         return suma;
     }
 
-    public void setSuma(int suma) {
+    public void setSuma(double suma) {
         this.suma = suma;
     }
 
